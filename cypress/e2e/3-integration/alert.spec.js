@@ -2,22 +2,22 @@
 
 
 describe('Working with Alerts', () => {
-    before(()=>{
+    before(() => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
     })
 
-    beforeEach(()=>{
+    beforeEach(() => {
 
         cy.reload()
         cy.visit('https://wcaquino.me/cypress/componentes.html')
 
     })
 
-    it('Alert', ()=>{
+    it('Alert', () => {
         cy.get('#alert').click()
 
         cy.on('window:alert', msg => {
-          expect(msg).to.be.equal('Alert Simples')  
+            expect(msg).to.be.equal('Alert Simples')
         })
 
         // cy.click().Alert('#alert', 'Alert Simples')
@@ -27,7 +27,7 @@ describe('Working with Alerts', () => {
         const stub = cy.stub().as('alerta')
 
         cy.on('window:alert', stub)
-        cy.get('#alert').click().then(()=>{
+        cy.get('#alert').click().then(() => {
             expect(stub.getCall(0)).to.be.calledWith('Alert Simples');
         })
 
@@ -48,7 +48,7 @@ describe('Working with Alerts', () => {
             expect(msg).to.be.equal('Confirm Simples')
             return false
         })
-        cy.on('window:alert', msg =>{
+        cy.on('window:alert', msg => {
             expect(msg).to.be.equal('Negado')
         })
         cy.get('#confirm').click()

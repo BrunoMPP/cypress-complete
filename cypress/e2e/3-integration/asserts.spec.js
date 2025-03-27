@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-it('Equality', ()=>{
+it('Equality', () => {
     const a = 1
 
     expect(a).equal(1)
@@ -21,26 +21,26 @@ it('Truthy', () => {
     expect(c).to.be.undefined
 })
 
-it('Object Equality', () =>{
+it('Object Equality', () => {
     const obj = {
-        a:1,
-        b:2
+        a: 1,
+        b: 2
     }
 
     expect(obj).equal(obj)
     expect(obj).equals(obj)
     expect(obj).eq(obj)
     expect(obj).to.be.equal(obj)
-    expect(obj).to.be.deep.equal({a:1, b:2})
-    expect(obj).eql({a:1, b:2})
-    expect(obj).include({a:1})
+    expect(obj).to.be.deep.equal({ a: 1, b: 2 })
+    expect(obj).eql({ a: 1, b: 2 })
+    expect(obj).include({ a: 1 })
     expect(obj).to.have.property('b')
     expect(obj).to.have.property('b', 2)
     expect(obj).to.not.be.empty
     expect({}).to.be.empty
 })
 
-it('Arrays', () =>{
+it('Arrays', () => {
     const arr = [1, 2, 3]
 
     expect(arr).to.have.members([1, 2, 3])
@@ -49,7 +49,7 @@ it('Arrays', () =>{
     expect([]).to.be.empty
 })
 
-it('Types', ()=>{
+it('Types', () => {
     const num = 1
     const str = 'string'
 
@@ -59,7 +59,7 @@ it('Types', ()=>{
     expect([]).to.be.an('array')
 })
 
-it('String', ()=>{
+it('String', () => {
     const str = 'String de teste'
 
     expect(str).to.be.equal('String de teste')
@@ -73,7 +73,7 @@ it('String', ()=>{
     expect(str).to.match(/\D+/)
 })
 
-it('Numbers', ()=> {
+it('Numbers', () => {
     const number = 4
     const floatNumber = 5.2123
 

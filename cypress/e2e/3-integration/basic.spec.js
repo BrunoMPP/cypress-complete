@@ -2,14 +2,14 @@
 
 
 
-describe('Cypress Basics', ()=>{
+describe('Cypress Basics', () => {
 
-    it('Should visit a page and assert title', ()=>{
+    it('Should visit a page and assert title', () => {
 
 
         cy.visit('https://wcaquino.me/cypress/componentes.html')
 
 
-         
+
     })
 })
